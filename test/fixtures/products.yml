@@ -5,3 +5,9 @@ one:
   price: 9.99
   published: false
   user: one
+
+two:
+  title: MyString
+  price: 9.99
+  published: false
+  user: two
