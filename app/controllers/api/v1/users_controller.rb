@@ -6,19 +6,20 @@ class Api::V1::UsersController < ApplicationController
     @user = User.create(params_user)
 
     if @user.save
-      render json: @user, status: :created
+      render json: UserSerializer.new(@user).serializable_hash, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
     end
   end
 
   def show
-    render json: User.find(params[:id])
+    options = { include: [:products] }
+    render json: UserSerializer.new(@user, options).serializable_hash
   end
 
   def update
     if @user.update(params_user)
-      render json: @user, status: :ok
+      render json: UserSerializer.new(@user).serializable_hash
     else
       render json: @user.errors, status: :unprocessable_entity
     end
