@@ -17,7 +17,6 @@ class Api::V1::OrdersController < ApplicationController
   end
 
   def create
-    # order = current_user.orders.build(order_params)
     order = Order.create! user: current_user
     order.build_placements_with_product_ids_and_quantities(order_params[:product_ids_and_quantities])
 
