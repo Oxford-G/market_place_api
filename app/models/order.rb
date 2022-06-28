@@ -3,6 +3,7 @@ class Order < ApplicationRecord
   before_validation :set_total!
   has_many :placements, dependent: :destroy
   has_many :products, through: :placements
+  validates_with EnoughProductsValidator
 
   def set_total!
     self.total = products.map(&:price).sum
