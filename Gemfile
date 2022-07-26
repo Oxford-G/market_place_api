@@ -45,3 +45,5 @@ gem "jwt", "~> 2.4"
 gem "faker", "~> 2.21"
 
 gem "fast_jsonapi", "~> 1.5"
+
+gem "kaminari", "~> 1.2"
