@@ -25,7 +25,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # gem 'rack-cors'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get debugger conso
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
